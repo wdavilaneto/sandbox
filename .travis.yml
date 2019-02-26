@@ -5,8 +5,8 @@ service:
 
 before_install:
   - cd front
-  - docker build -t front -f Dockerfile.dev .
+  - docker build -f Dockerfile.dev -t front .
 
 script:
-  - cd front
+#  - cd front
   - docker run front npm run test -- --coverage
