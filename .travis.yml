@@ -1,0 +1,12 @@
+sudo: required
+
+service: 
+  - docker
+
+before_install:
+  - cd front
+  - docker build -t front -f Dockerfile.dev .
+
+script:
+  - cd front
+  - docker run front npm run test -- --coverage
